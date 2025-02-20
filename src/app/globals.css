@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  letter-spacing: 0.03rem;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 400;
+  color: #111;
+}
+@media (min-width: 576px) {
+  .container{
+      max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container{
+      max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container{
+      max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container{
+      max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container{
+      max-width: 1320px;
+  }
+}
+.container{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+h1, .h1 {
+  font-size: 4.5rem;
+}
+.image-zoom-effect {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-zoom-effect .image-holder {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-zoom-effect:hover .image-holder {
+  transform: scale(0.95);
+}
+
+.image-zoom-effect img {
+  transform: scale();
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.image-zoom-effect:hover img {
+  transform: scale(0.90);
+}
+
+.Toastify__toast-icon{
+  font-size: 14px !important;
+}
+
+.loader{
+  position: relative;
+  font-size: 48px;
+  letter-spacing: 6px;
+}
+.loader:before {
+  content: "KAIRA";
+  color: #111;
+}
+.dark .loader:before {
+  color: #f1f1f0;
+}
+.loader:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #ff3d00;
+  background-image: radial-gradient(circle 2px, #fff4 100%, transparent 0),
+    radial-gradient(circle 1px, #fff3 100%, transparent 0);
+  background-position: 14px -4px, 12px -1px;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  top: -5px;
+  right: 66px;
+  transform-origin: center bottom;
+  animation: fillBaloon 1s ease-in-out infinite alternate;
+}
+
+@keyframes fillBaloon {
+  0% { transform: scale(1)}
+  100% { transform: scale(3)}
+}
+
+@keyframes moveFromTop {
+  0% {
+    transform: translateY(-30%);
+  }
+  50% {
+    transform: translateY(-60%);
+  }
+  100% {
+    transform: translateY(-30%);
+  }
+}
+
+.animate-moveFromTop {
+  animation: moveFromTop 2s infinite ease-in-out;
+  display: inline-block;
+}
