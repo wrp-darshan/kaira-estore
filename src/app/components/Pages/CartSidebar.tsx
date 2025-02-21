@@ -26,7 +26,7 @@ function CartSidebar({ closeSidebar }: { closeSidebar: () => void }) {
 
       <div className="cart-items space-y-4 overflow-y-auto max-h-[65vh] pr-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         {cart.length === 0 ? (
-          <p>Your cart is empty.</p>
+          <p className="dark:text-light/60">Your cart is empty.</p>
         ) : (
           cart.map((item, index) => (
             <div key={index}>
